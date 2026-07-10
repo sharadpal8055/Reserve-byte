@@ -37,21 +37,19 @@ export const register = asyncHandler(async (req, res) => {
 
   // store token in cookie
 
-  res.cookie(
-    "token",
+ res.cookie(
+  "token",
+  token,
+  {
+    httpOnly:true,
 
-    token,
+    secure:true,
 
-    {
-      httpOnly: true,
+    sameSite:"none",
 
-      secure: process.env.NODE_ENV === "production",
-
-      sameSite: "strict",
-
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-    },
-  );
+    maxAge:7 * 24 * 60 * 60 * 1000
+  }
+);
 
   res.status(201).json({
     success: true,
@@ -127,7 +125,14 @@ export const login = asyncHandler(async (req, res) => {
 // =======================
 
 export const logout = asyncHandler(async (req, res) => {
-  res.clearCookie("token");
+ res.clearCookie(
+ "token",
+ {
+   httpOnly:true,
+   secure:true,
+   sameSite:"none"
+ }
+);
 
   res.json({
     success: true,
