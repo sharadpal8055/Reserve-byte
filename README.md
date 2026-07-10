@@ -576,20 +576,5 @@ Developed by **Sharad Pal**
 
 Full Stack MERN Developer
 
-```
 
----
-
-This README directly covers every evaluation checkbox:
-- deployment ✅  
-- setup ✅  
-- availability algorithm ✅  
-- RBAC explanation ✅  
-- assumptions ✅  
-- limitations ✅  
-- improvements ✅  
-- data modeling ✅  
-- security decisions ✅  
-
-Good for assignment submission.
 ```
